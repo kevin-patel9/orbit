@@ -5,7 +5,7 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import { StyleSheet, Text, View, Image } from "react-native";
 import Profile from "./Screens/Profile";
 import Discover from "./Screens/Discover";
-import Create from "./Screens/Create";
+import Create from "./Screens/Create/Create";
 import Community from "./Screens/Community";
 import Home from "./Screens/Home";
 
@@ -125,6 +125,7 @@ const AllTab = () => {
                 options={{
                     tabBarIcon: CreateIcon,
                     headerShown: false,
+                    unmountOnBlur: true
                 }}
             />
             <Tab.Screen

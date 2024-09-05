@@ -53,7 +53,7 @@ function Home() {
         contentContainerStyle={{ marginHorizontal: 32, paddingBottom: 60 }}
         showsVerticalScrollIndicator={false}
       >
-        <Text style={{ marginVertical: 20, fontSize: 20, fontWeight: '600' }}>
+        <Text style={[styles.title, { marginTop: 20 }]}>
           Discover the world
         </Text>
         <TextInput placeholder="Search" style={styles.textInput} />
@@ -61,7 +61,10 @@ function Home() {
             <Image source={{ uri: randomPost?.download_url }} style={{ height: 140, width: "auto", borderRadius: 10 }} />
         </View>
         <View style={styles.section}>
-          <Text style={styles.title}>Trending hashtags</Text>
+          <View style={styles.trendingTitle}>
+            <Text style={styles.title}>Trending hashtags</Text>
+            <Text style={styles.seeAllText}>see all</Text>
+          </View>
           <FlatList
             data={hashTagList}
             contentContainerStyle={styles.flatListContent}
@@ -78,7 +81,10 @@ function Home() {
           />
         </View>
         <View style={styles.section}>
-          <Text style={styles.title}>Top Community</Text>
+          <View style={styles.trendingTitle}>
+            <Text style={styles.title}>Top Community</Text>
+            <Text style={styles.seeAllText}>see all</Text>
+          </View>
           <FlatList
             data={communityList}
             showsHorizontalScrollIndicator={false}
@@ -95,7 +101,10 @@ function Home() {
           />
         </View>
         <View style={styles.section}>
-          <Text style={styles.title}>Top nomads</Text>
+          <View style={styles.trendingTitle}>
+            <Text style={styles.title}>Top nomads</Text>
+            <Text style={styles.seeAllText}>see all</Text>
+          </View>
           <FlatList
             data={topNomads}
             contentContainerStyle={styles.flatListContent}
@@ -129,15 +138,16 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   section: {
-    marginVertical: 14,
+    marginVertical: 12,
   },
   title: {
     fontSize: 20,
     fontWeight: '600',
-    marginBottom: 10,
+    // marginBottom: 10,
+    color: "#5a7a7f"
   },
   flatListContent: {
-    alignItems: 'center', // Center items horizontally
+    alignItems: 'center',
     gap: 20,
   },
   itemContainer: {
@@ -157,4 +167,13 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginTop: 5,
   },
+  trendingTitle: {
+    flexDirection: "row", 
+    justifyContent: "space-between", 
+    alignItems: "center", 
+    marginBottom: 10 
+  },
+  seeAllText: {
+    color: "#5a7a7f"
+  }
 });
