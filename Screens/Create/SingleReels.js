@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View, Dimensions, TouchableOpacity } from "react-native";
+import { Image, StyleSheet, Text, View, Dimensions, TouchableOpacity, Platform } from "react-native";
 import AntDesign from '@expo/vector-icons/AntDesign';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     headerTitle: {
         position: "absolute",
         left: width / 2.3,
-        top: 16,
+        top: Platform.OS === "android" ? 16 : 30,
         zIndex: 2,
         color: "white",
         fontWeight: "600"
